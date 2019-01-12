@@ -1,5 +1,17 @@
-az account set --subscription "MichalFurmankiewicz"
+# show your active subscriptions
+az account list -o table
 
-cd /Documents/Projekty/0.Community/Poznan-Cloud\&DataCenterDay#3/ENV
+# use on of your subscriptions
+az account set --subscription "MyHappyDay"
+
+# set resource group name 
 rgName=sec01rg
-az group deployment create --name lab01 --resource-group $rgName --template-file deploy-env-v.1.1.json
+
+# validate deployment 
+az group deployment validate  --resource-group $rgName --template-uri https://raw.githubusercontent.com/djkormo/secworkshop/master/deploy1.1.json
+
+# create deployment 
+az group deployment create --name lab01 --resource-group $rgName --template-uri https://raw.githubusercontent.com/djkormo/secworkshop/master/deploy1.1.json
+
+
+

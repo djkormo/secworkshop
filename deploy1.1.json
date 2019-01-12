@@ -4,11 +4,20 @@
     "parameters": {
         "rebuildVNET": {
             "type": "string",
-            "defaultValue": "No"
+            "defaultValue": "Yes",
+			"allowedValues": [
+               "No",
+               "Yes"
+           ],
+
         },
         "rebuildJUMPHOSTVNET": {
             "type": "string",
-            "defaultValue": "No"
+            "defaultValue": "Yes",
+			"allowedValues": [
+               "No",
+               "Yes"
+           ],
         },
         "workshopName": {
             "type": "string",
