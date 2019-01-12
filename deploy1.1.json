@@ -8,8 +8,7 @@
 			"allowedValues": [
                "No",
                "Yes"
-           ],
-
+           ]
         },
         "rebuildJUMPHOSTVNET": {
             "type": "string",
@@ -17,7 +16,7 @@
 			"allowedValues": [
                "No",
                "Yes"
-           ],
+           ]
         },
         "workshopName": {
             "type": "string",
@@ -27,6 +26,10 @@
             "type": "string",
             "defaultValue": "1.1"
         },
+		"subscriptionId" : {
+		"type": "string",
+		"defaultValue": "[subscriptionId()]"
+		},
         "workspaceId":
         {
             "type": "string",
@@ -1022,7 +1025,7 @@
             },
             "properties": {
                 "hardwareProfile": {
-                    "vmSize": "Standard_DS2ss_v2"
+                    "vmSize": "Standard_D2_v2"
                 },
                 "storageProfile": {
                     "imageReference": {
