@@ -28,7 +28,7 @@
         },
 		"subscriptionId" : {
 		"type": "string",
-		"defaultValue": "[subscriptionId()]"
+		"defaultValue": "[subscription().subscriptionId]"
 		},
         "workspaceId":
         {
