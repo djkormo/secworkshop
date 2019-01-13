@@ -144,7 +144,7 @@
         },
         "adminUsername": {
             "type": "string",
-            "defaultValue": "mifurm",
+            "defaultValue": "djkormo",
             "metadata": {
                 "description": "User name for the Virtual Machine."
             }
@@ -158,28 +158,28 @@
         },
         "dnsLabelPrefix": {
             "type": "string",
-            "defaultValue": "mfub01",
+            "defaultValue": "djkormoub01",
             "metadata": {
                 "description": "DNS Label for the Public IP. Must be lowercase. It should match with the following regular expression: ^[a-z][a-z0-9-]{1,61}[a-z0-9]$ or it will raise an error."
             }
         },
         "dnsLabelPrefix1": {
             "type": "string",
-            "defaultValue": "mfub02",
+            "defaultValue": "djkormoub02",
             "metadata": {
                 "description": "DNS Label for the Public IP. Must be lowercase. It should match with the following regular expression: ^[a-z][a-z0-9-]{1,61}[a-z0-9]$ or it will raise an error."
             }
         },
         "dnsLabelPrefix2": {
             "type": "string",
-            "defaultValue": "mfwin01",
+            "defaultValue": "djkormowin01",
             "metadata": {
                 "description": "DNS Label for the Public IP. Must be lowercase. It should match with the following regular expression: ^[a-z][a-z0-9-]{1,61}[a-z0-9]$ or it will raise an error."
             }
         },
         "dnsLabelPrefix3": {
             "type": "string",
-            "defaultValue": "mfwin02",
+			"defaultValue": "djkormowin02",
             "metadata": {
                 "description": "DNS Label for the Public IP. Must be lowercase. It should match with the following regular expression: ^[a-z][a-z0-9-]{1,61}[a-z0-9]$ or it will raise an error."
             }
@@ -268,6 +268,7 @@
                 "description": "Subnet 1 Name"
             }
         }
+		
     },
     "variables": {
         "metricsresourceid": "[concat('/subscriptions/', subscription().subscriptionId, '/resourceGroups/', resourceGroup().name, '/providers/', 'Microsoft.Compute/virtualMachines/', variables('vmName'))]",
@@ -296,7 +297,8 @@
         "vmName3": "vmwin2k8r2dev01",
         "jumphostvmname":"kali01mng01",
         "vmSizeLinux": "Standard_A0",
-        "vmSizeWindows": "Standard_DS1_v2"
+        "vmSizeWindows": "Standard_DS1_v2",
+		"vmSizeLinuxJumpBox": "Standard_D2_v2"
     },
     "resources": [
         {
@@ -720,9 +722,9 @@
                             "timestamp": 123456789
                         },
                         "protectedSettings": {
-                            "commandToExecute": "bash install.sh",
+                            "commandToExecute": "bash install-ubuntu.sh",
                             "fileUris": [
-                                "https://raw.githubusercontent.com/mifurm/ARMWorkshop/master/install.sh"
+                                "https://raw.githubusercontent.com/djkormo/secworkshop/master/scripts/install-ubuntu.sh"
                             ]
                         }
                     }
@@ -1025,7 +1027,7 @@
             },
             "properties": {
                 "hardwareProfile": {
-                    "vmSize": "Standard_D2_v2"
+                    "vmSize": "[variables('vmSizeLinuxJumpBox')]"
                 },
                 "storageProfile": {
                     "imageReference": {
