@@ -626,9 +626,9 @@
                             "timestamp": 123456789
                         },
                         "protectedSettings": {
-                            "commandToExecute": "bash install.sh",
+                            "commandToExecute": "bash install-ubuntu.sh",
                             "fileUris": [
-                                "https://raw.githubusercontent.com/mifurm/ARMWorkshop/master/install.sh"
+                                "https://raw.githubusercontent.com/djkormo/secworkshop/master/scripts/install-ubuntu.sh"
                             ]
                         }
                     }
